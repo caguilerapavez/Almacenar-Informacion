@@ -1,2 +1,12 @@
-<h1>Shows#index</h1>
-<p>Find me in app/views/shows/index.html.erb</p>
+<h1>Mostrando todas las Series</h1>
+<p>Cantidad de series: <%= @shows.count %></p>
+
+<% @shows.each do |show| %>
+    <h3><%= show.name %></h3>
+    <h3><%= show.synopsis %></h3>
+    <h3><%= show.director %></h3>
+<% end %>
+
+<div>
+    <%= link_to "Agregar nueva Serie", shows_new_path, class:"btn btn-dark" %>
+</div>

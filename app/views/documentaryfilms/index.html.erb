@@ -1,2 +1,12 @@
-<h1>Documentaryfilms#index</h1>
-<p>Find me in app/views/documentaryfilms/index.html.erb</p>
+<h1>Mostrando todos los Documentales</h1>
+<p>Cantidad de documentales: <%= @documentaryfilms.count %></p>
+
+<% @documentaryfilms.each do |documentaryfilm| %>
+    <h3><%= documentaryfilm.name %></h3>
+    <h3><%= documentaryfilm.synopsis %></h3>
+    <h3><%= shodocumentaryfilm.director %></h3>
+<% end %>
+
+<div>
+    <%= link_to "Agregar nuevo Documental", documentaryfilms_new_path, class:"btn btn-dark" %>
+</div>

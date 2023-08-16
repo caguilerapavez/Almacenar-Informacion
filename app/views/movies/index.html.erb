@@ -1,2 +1,12 @@
-<h1>Movies#index</h1>
-<p>Find me in app/views/movies/index.html.erb</p>
+<h1>Mostrando todos las Peliculas</h1>
+<p>Cantidad de peliculas: <%= @movies.count %></p>
+
+<% @movies.each do |movie| %>
+    <h3><%= movie.name %></h3>
+    <h3><%= movie.synopsis %></h3>
+    <h3><%= movie.director %></h3>
+<% end %>
+
+<div>
+    <%= link_to "Agregar nueva Pelicula", movies_new_path, class:"btn btn-dark" %>
+</div>

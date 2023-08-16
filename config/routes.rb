@@ -1,15 +1,20 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
   get 'shows/index'
-  get 'shows/create'
   get 'shows/new'
+  post 'shows',              to:"shows#create"
+
   get 'documentaryfilms/index'
-  get 'documentaryfilms/create'
   get 'documentaryfilms/new'
+  post 'documentaryfilms',   to:"documentaryfilms#create"
+
   get 'movies/index'
-  get 'movies/create'
   get 'movies/new'
+  post 'movies',             to:"movies#create"
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
+  root "home#index"
 end
