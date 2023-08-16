@@ -1,2 +1,30 @@
-<h1>Documentaryfilms#new</h1>
-<p>Find me in app/views/documentaryfilms/new.html.erb</p>
+<h1 class="text-center my-5">Crear Documental</h1>
+<br><br>
+
+<div class="d-flex justify-content-center">
+    <div class="card col-6">
+        <%= form_with model: @documentaryfilm, method: :post do |documentaryfilm| %>
+            <div class="border p-5 shadow">
+                <div class="mb-3">
+                    <%= documentaryfilm.label :name, "Nombre Documental:", class:"form-label" %>
+                    <%= documentaryfilm.text_field :name, class:"form-control" %>
+                </div>
+                <div class="mb-3">
+                    <%= documentaryfilm.label :synopsis, "Sinopsis Documental:", class:"form-label" %>
+                    <%= documentaryfilm.text_area :synopsis, class:"form-control" %>
+                </div>
+                <div class="mb-5">
+                    <%= documentaryfilm.label :director, "Director Documental:", class:"form-label" %>
+                    <%= documentaryfilm.text_field :director, class:"form-control" %>
+                </div>
+                <div>
+                    <%= documentaryfilm.submit "Crear", class:"btn btn-dark" %>
+                </div>
+            </div>
+        <%  end %>
+    </div>
+</div>
+<div class="text-center my-5">
+    <%= link_to "Listado Documental", documentaryfilms_index_path, class:"btn btn-dark" %>
+    <%= link_to "Inicio", home_index_path, class:"btn btn-dark" %>
+</div>

@@ -1,2 +1,30 @@
-<h1>Shows#new</h1>
-<p>Find me in app/views/shows/new.html.erb</p>
+<h1 class="text-center my-5">Crear Series</h1>
+<br><br>
+
+<div class="d-flex justify-content-center">
+    <div class="card col-6">
+        <%= form_with model: @show, method: :post do |show| %>
+            <div class="border p-5 shadow">
+                <div class="mb-3">
+                    <%= show.label :name, "Nombre Serie:", class:"form-label" %>
+                    <%= show.text_field :name, class:"form-control" %>
+                </div>
+                <div class="mb-3">
+                    <%= show.label :synopsis, "Sinopsis Serie:", class:"form-label" %>
+                    <%= show.text_area :synopsis, class:"form-control" %>
+                </div>
+                <div class="mb-5">
+                    <%= show.label :director, "Director Serie:", class:"form-label" %>
+                    <%= show.text_field :director, class:"form-control" %>
+                </div>
+                <div>
+                    <%= show.submit "Crear", class:"btn btn-dark" %>
+                </div>
+            </div>
+        <%  end %>
+    </div>
+</div>
+<div class="text-center my-5">
+    <%= link_to "Listado Series", shows_index_path, class:"btn btn-dark" %>
+    <%= link_to "Inicio", home_index_path, class:"btn btn-dark" %>
+</div>
